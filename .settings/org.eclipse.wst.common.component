@@ -2,6 +2,7 @@
     <wb-module deploy-name="KINSHIP">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/" source-path="/WebContent/WEB-INF"/>
         <property name="context-root" value="KINSHIP"/>
         <property name="java-output-path" value="/KINSHIP/build/classes"/>
     </wb-module>
