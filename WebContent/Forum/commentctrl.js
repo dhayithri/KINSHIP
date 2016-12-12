@@ -1,6 +1,6 @@
 app.controller('commentctrl', [ '$scope', '$http', '$rootScope',
 		function($scope, $http, $rootScope) {
-			var BASE_URL = 'http://localhost:8081/Backend';
+			var BASE_URL = 'http://localhost:8084/Backend';
 			$scope.iforum = $rootScope.individualforums;
 			// console.log(individualforums)
 			$scope.submit = function(id) {
