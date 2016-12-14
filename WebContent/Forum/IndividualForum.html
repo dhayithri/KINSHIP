@@ -15,7 +15,8 @@
 		<br>
 		<h3>Topic:{{iforum.topic}}</h3>
 		<br>
-		<p><h3>Description:</h3>
+		<p>
+		<h3>Description:</h3>
 		{{iforum.description}}
 		</p>
 
@@ -41,30 +42,28 @@
 								</div>
 							</fieldset>
 						</form>
-
-						<h3>4 Comments</h3>
-
-						<!-- COMMENT 1 - START -->
 						<div data-ng-init="getcomment(iforum.id)">
+							<h3>{{comments.length}} Comments</h3>
+
+							<!-- COMMENT 1 - START -->
+
 							<div data-ng-repeat="comm in comments">
 								<div class="media">
 									<a class="pull-left" href="#"><img class="media-object"
 										src="http://bootdey.com/img/Content/avatar/avatar1.png" alt=""></a>
 									<div class="media-body">
-										<div data-ng-bind="getuser(comm.userid)">
-											<h4 class="media-heading">{{users.username}}</h4>
-										</div>
-										<p>{{comm.comment}}</p>
-										<ul class="list-unstyled list-inline media-detail pull-left">
-											<li><i class="fa fa-calendar"></i>{{comm.commenttime |
-												date:dd/MM/yyyy}}</li>
-											<li><i class="fa fa-thumbs-up"></i>13</li>
-										</ul>
-										<ul class="list-unstyled list-inline media-detail pull-right">
-											<li class=""><a href="">Like</a></li>
-											<li class=""><a href="">Reply</a></li>
-										</ul>
+										<h4 class="media-heading">{{users.username}}</h4>
 									</div>
+									<p>{{comm.comment}}</p>
+									<ul class="list-unstyled list-inline media-detail pull-left">
+										<li><i class="fa fa-calendar"></i>{{comm.commenttime |
+											date:dd/MM/yyyy}}</li>
+										<li><i class="fa fa-thumbs-up"></i>13</li>
+									</ul>
+									<ul class="list-unstyled list-inline media-detail pull-right">
+										<li class=""><a href="">Like</a></li>
+										<li class=""><a href="">Reply</a></li>
+									</ul>
 								</div>
 							</div>
 						</div>

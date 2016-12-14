@@ -1,27 +1,27 @@
-var app = angular.module("blogapp", []);
+var app=angular.module("blogapp",[])
 app.controller('blogcntrl', [ '$scope', '$http', function($scope, $http) {
-	var BASE_URL = 'http://localhost:8084/Backend';
+	var BASE_URL = 'http://localhost:8083/Backend';
 
-	$scope.getAllBlogs = function() {
+	$scope.getAllBlogs= function() {
 		console.log("get all blogs")
 		$http({
 			method : 'GET',
-			url : BASE_URL + '/blog'
+			url : BASE_URL+'/blog'
 		}).success(function(data, status, headers, config) {
-			$scope.blogs = data;
-			// alert(data);
+			$scope.blogs=data;
+			//alert(data); 
 		}).error(function(data, status, headers, config) {
 			alert("Error");
 		});
 	};
 	$scope.submit = function() {
 		console.log("create blog")
-
-		$scope.blog = {
-			id : $scope.id,
+		
+		$scope.blog = {	
+			id:$scope.id,
 			title : $scope.title,
-			userid : $scope.userid,
-			doc : $scope.doc,
+			userid:$scope.userid,
+			doc:$scope.doc,
 			content : $scope.content,
 		}
 		$http({
@@ -29,27 +29,27 @@ app.controller('blogcntrl', [ '$scope', '$http', function($scope, $http) {
 			url : BASE_URL + '/createblog',
 			data : $scope.blog
 		}).success(function(data, status, headers, config) {
-			$scope.id = '';
-			$scope.title = '';
-			$scope.userid = '';
-			$scope.doc = '';
-			$scope.content = '';
+			$scope.id='';
+			$scope.title='';
+			$scope.userid='';
+			$scope.doc='';
+			$scope.content='';
 			$scope.getAllBlogs();
-		}).error(function(data, status, headers, config) {
+		}).error(function(data,status,headers,config){
 			alert("error");
 		});
 	};
-	$scope.deleteblog = function(id) {
+	$scope.deleteblog=function(id){
 		$http({
-			method : 'DELETE',
-			url : BASE_URL + '/deleteblog/' + id
-		}).success(function(data, status, headers, config) {
+			method:'DELETE',
+		url:BASE_URL+'/deleteblog/'+id
+		}).success(function(data,status,headers,config){
 			$scope.getAllBlogs();
 		})
 	};
-	$scope.editblog = function(id, title, content) {
-		$scope.id = id;
-		$scope.title = title;
-		$scope.content = content;
+	$scope.editblog=function(id,title,content){
+		$scope.id=id;
+		$scope.title=title;
+		$scope.content=content;
 	}
-} ]);
+	        }]);
