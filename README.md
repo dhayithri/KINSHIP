@@ -1,4 +1,4 @@
- KINSHIP - NIIT Project ②
+KINSHIP - NIIT Project ②
 Collaboration project consisting of basic funtionality like
  - New user registrations
  - Blogs
